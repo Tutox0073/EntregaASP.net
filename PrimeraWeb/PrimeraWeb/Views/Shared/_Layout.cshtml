@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PrimeraWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/misEstilos.css">
+</head>
+
+<body class="EstiloFondo">
+    <header>
+        <nav
+            class="navbarenp navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 navbar-light bg-light">
+            <div class="container">
+                <div class="EstilocontImg">
+                    <a class="ImagenLogo" asp-area="" asp-controller="Web" asp-action="Index"><img class="EstiloImg"
+                            src="~/Images/thunderBien.png"></a>
+                </div>
+                <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse"
+                    data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+                    <ul class="navbar-nav flex-grow-1">
+                        <div class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Web" asp-action="Index">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Estudiantes"
+                                    asp-action="MostrarEstudiantes">Mostrar Estudiantes</a>
+                            </li>
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("administrador") ||
+                            User.IsInRole("profesor"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Estudiantes"
+                                    asp-action="Agregar">Agregar Estudiante</a>
+                                </li>
+                            }
+                        </div>
+
+                        <div class="navbar-nav d-flex flex-row-reverse bd-highlight">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link " asp-controller="Authentication" asp-action="Logout">Cerrar
+                                        Sesion</a>
+                                </li>
+                            }
+
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Authentication" asp-action="Inicio">Inicio de
+                                        sesion</a>
+                                </li>
+                            }
+                        </div>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted EstiloFooter d-flex justify-content-around navbarenp bg-light">
+        <div class=" EstiloFooter">
+            <div class="">
+                <a class="navbar-brand" href="https://github.com/tutox073"><img class="EstilocontImg"
+                        src="~/Images/github.png"></a>
+            </div>
+            <div class="EstiloVerificar">
+                <div class="PruebaTexto fs-6 fw-light">Carlos Giovanny Rodriguez Triviño</div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

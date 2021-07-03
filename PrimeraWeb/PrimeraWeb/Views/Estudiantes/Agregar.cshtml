@@ -1,0 +1,53 @@
+@model PrimeraWeb.Models.Estudiantes
+@{
+
+    ViewData["Title"] = "Agregar Page";
+}
+
+<div class="Estiloall">
+    <h3 class="EstiloH3 text-light">Agregar Estudiantes</h3>
+    <div class="EstiloSection">
+        <div class="EstiloSection">
+            <div class="EstiloContenedorButtonRegresar">
+                <button class="EstiloButton"><a asp-action="MostrarEstudiantes">Regresar al listado</a></button>
+            </div>
+        </div>
+        <div>
+            <form class="EstiloForm" asp-action="Agregar">
+                <div>
+                    <label asp-for="Codigo" class="control-label text-light"></label>
+                    <input asp-for="Codigo" class="form-control" maxlength="5" required>
+                    <span class="text-danger">@ViewData["mensaje"]</span>
+                </div>
+
+                <div>
+                    <label asp-for="Nombre" class="text-light"></label>
+                    <input asp-for="Nombre" class="form-control" type="text" maxlength="20" required>
+                </div>
+
+                <div>
+                    <label asp-for="Correo" class="text-light"></label>
+                    <input asp-for="Correo" class="form-control" type="email">
+                </div>
+
+                <div>
+                    <label asp-for="Nota1" class="text-light"></label>
+                    <input asp-for="Nota1" class="form-control" max="5" step="0.01" required>
+                </div>
+
+                <div>
+                    <label asp-for="Nota2" class="text-light"></label>
+                    <input asp-for="Nota2" class="form-control" max="5" step="0.01" required>
+                </div>
+
+                <div>
+                    <label asp-for="Nota3" class="text-light"></label>
+                    <input asp-for="Nota3" class="form-control" max="5" step="0.01" required>
+                </div>
+
+                <div class="EstiloButtonpaddin">
+                    <button type="submit">Agregar Estudiante</button>
+                </div>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,44 @@
+@model PrimeraWeb.Models.Estudiantes
+@{
+
+    ViewData["Title"] = "Borrar Page";
+}
+
+<div class="Estiloall">
+    <h3 class="EstiloH3 text-light">¿Seguro desea eliminar el siguiente estudiante?</h3>
+    <div class="EstiloSection">
+        <div class="EstiloContenedorButtonRegresar">
+            <button class="EstiloButton"><a asp-action="MostrarEstudiantes">Regresar al listado</a></button>
+        </div>
+        <div class="EstiloText">
+            <div class="EstiloPaddin">
+                <div class="text-light">
+                    Codigo: @Model.Codigo
+                </div>
+                <div class="text-light">
+                    Nombre: @Model.Nombre
+                </div>
+                <div class="text-light">
+                    Nota1: @Model.Nota1
+                </div>
+                <div class="text-light">
+                    Nota2: @Model.Nota2
+                </div>
+                <div class="text-light">
+                    Nota3: @Model.Nota3
+                </div>
+            </div>
+            <div class="EstiloButtons">
+                <form asp-action="Borrar">
+                    <div class="EstiloButtonpaddin">
+                        <input type="hidden" asp-for="Codigo">
+                        <button type="submit">Si</button>
+                    </div>
+                </form>
+                <div class="EstiloButtonpaddin">
+                    <button><a asp-action="MostrarEstudiantes">No</a></button>
+                </div>
+            </div>
+        </div>
+
+    </div>

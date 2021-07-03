@@ -1,0 +1,86 @@
+@using System.Net;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IEnumerable<PrimeraWeb.Models.Estudiantes>
+@{
+
+    ViewData["Title"] = "Form Page";
+
+    var returnUrl = ViewData["ReturnUrl"] as string;
+
+    var error = TempData["Error"] as string;
+}
+
+<div class="Estiloall">
+    <h3 class="EstiloH3 text-light">Lista de Estudiantes</h3>
+    <div class="EstiloSection">
+
+
+        <div class="table-responsive-lg EstiloTabla">
+            <table class="table table-secondary">
+                <thead>
+                    <tr class="table-secondary">
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Estudiante in Model)
+
+
+
+                    {
+                        <tr class="table-secondary">
+                            <td class="table-secondary">@Estudiante.Codigo</td>
+                            <td class="table-secondary">@Estudiante.Nombre</td>
+                            <td class="table-secondary">@Estudiante.Correo</td>
+
+                            <td class="table-secondary">@Html.ActionLink("Detalle", "Detalle", new{id = Estudiante.Codigo})
+                            </td>
+
+                            @if (User.IsInRole("administrador") || User.IsInRole("profesor"))
+
+                            {
+                                <td class="table-secondary">@Html.ActionLink("Editar", "Editar", new{id = Estudiante.Codigo})
+                                </td>
+
+
+
+                            }
+
+                            @if (User.IsInRole("administrador"))
+
+                            {
+                                <td class="table-secondary">@Html.ActionLink("Borrar", "Borrar", new{id = Estudiante.Codigo})
+                                </td>
+
+                            }
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("MostrarEstudiantes", new { page = page}),
+            new X.PagedList.Mvc.Core.Common.PagedListRenderOptions
+            {
+            DisplayItemSliceAndTotal = false,
+            ContainerDivClasses = new [] {"navigation"},
+            LiElementClasses = new[] { "page-item" },
+            PageClasses = new[] { "page-link" },
+
+            })
+
+            @section Scripts {
+            <script>
+                $(document).ready(fuction() {
+                    $('ul.pagination > li.disabled > a').addClass('page - link');
+                });
+            </script>
+
+            }
+
+        </div>
+    </div>
+</div>

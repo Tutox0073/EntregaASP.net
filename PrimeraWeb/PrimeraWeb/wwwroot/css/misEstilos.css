@@ -1,0 +1,157 @@
+.ImagenLogo {
+    width: 100%;
+    background-color: null;
+}
+
+.navbarenp {
+    background-color: #494949;
+}
+
+.EstiloContenedr {
+    display: flex;
+}
+
+.ContenedorIma {
+    width: 50%;
+}
+
+.fondoboton {
+    background-color: cornsilk;
+}
+
+.EstiloFondo {
+    background-image: url(../Images/AuroraBoreal1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.EstiloVerificar {
+    align-content: end;
+}
+
+.PruebaTexto {
+    line-height: 5px;
+}
+
+.EstiloImg {
+    width: 100%;
+}
+
+.EstilocontImg {
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.EstiloFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Estiloall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.EstiloSection {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.EstiloContenedorButton {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.EstiloContenedorButtonRegresar {
+    width: 70%;
+}
+
+.EstiloButton {
+    padding: 3px;
+    margin: 3px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: small;
+}
+
+.EstiloButtonpaddin {
+    padding: 3px;
+    margin: 3px;
+}
+
+.EstiloContenedorForm {
+    width: 80%;
+}
+
+.EstiloTabla {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.EstiloH3 {
+    font-size: x-large;
+    padding: 3px;
+    text-align: center;
+}
+
+.EstiloText {
+    font-size: medium;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+}
+
+.EstiloForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.EstiloInput {
+    float: left;
+}
+
+.EstiloButtons {
+    display: flex;
+    text-align: center;
+    align-content: center;
+}
+
+.EstiloPaddin {
+    padding: 0px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
+}
+
+@media screen and (max-width: 600px) {
+    .EstiloSection {
+        display: flex;
+        flex-direction: column;
+    }
+    .EstiloContenedorButton {
+        display: flex;
+        flex-direction: row;
+    }
+    .EstiloContenedorForm {
+        margin: 5px 220px 1px 1px;
+    }
+    .EstiloContenedr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ContenedorIma {
+        align-content: center;
+    }
+    .EstiloTabla {
+        width: 400px;
+    }
+}

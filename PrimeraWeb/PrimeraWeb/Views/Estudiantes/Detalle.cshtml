@@ -1,0 +1,50 @@
+@model PrimeraWeb.Models.Estudiantes
+@{
+
+    ViewData["Title"] = "Detalle Page";
+}
+
+<div class="Estiloall">
+    <h3 class="EstiloH3 text-light">Detalle de Estudiantes</h3>
+    <div class="EstiloSection">
+        <div class="EstiloContenedorButtonRegresar">
+            <button class="EstiloButton"><a asp-action="MostrarEstudiantes">Regresar al listado</a></button>
+        </div>
+        <div class="EstiloText">
+            <div class="EstiloPaddin">
+                <div class="text-light">
+                    Codigo: @Model.Codigo
+                </div>
+                <div class="text-light">
+                    Nombre: @Model.Nombre
+                </div>
+                <div class="text-light">
+                    Nota1: @Model.Nota1
+                </div>
+                <div class="text-light">
+                    Nota2: @Model.Nota2
+                </div>
+                <div class="text-light">
+                    Nota3: @Model.Nota3
+                </div class="text-light">
+            </div>
+            <div class="EstiloButtons">
+
+                @if (User.IsInRole("administrador") || User.IsInRole("profesor"))
+                {
+                    <div class="EstiloButton fondoboton">
+                        @Html.ActionLink("Editar", "Editar", new {id = Model.Codigo})
+                    </div>
+                }
+
+                @if (User.IsInRole("administrador"))
+                {
+                    <div class="EstiloButton fondoboton">
+                        @Html.ActionLink("Borrar", "Borrar", new{id = Model.Codigo})
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>

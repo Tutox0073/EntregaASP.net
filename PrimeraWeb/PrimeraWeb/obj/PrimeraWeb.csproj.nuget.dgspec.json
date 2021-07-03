@@ -1,0 +1,103 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\WebApp\\PrimeraWeb\\PrimeraWeb\\PrimeraWeb.csproj": {}
+  },
+  "projects": {
+    "D:\\WebApp\\PrimeraWeb\\PrimeraWeb\\PrimeraWeb.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WebApp\\PrimeraWeb\\PrimeraWeb\\PrimeraWeb.csproj",
+        "projectName": "PrimeraWeb",
+        "projectPath": "D:\\WebApp\\PrimeraWeb\\PrimeraWeb\\PrimeraWeb.csproj",
+        "packagesPath": "C:\\Users\\music\\.nuget\\packages\\",
+        "outputPath": "D:\\WebApp\\PrimeraWeb\\PrimeraWeb\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\music\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools.DotNet": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "x.pagedlist.mvc": {
+              "target": "Package",
+              "version": "[7.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.11, 3.1.11]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.100-preview.1.21103.13\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@using System.Net;
+@{
+
+
+
+    var returnUrl = ViewData["ReturnUrl"] as string;
+
+
+
+    var error = TempData["Error"] as string;
+
+}
+
+<div class="Estiloall">
+    <h3 class="EstiloH3 text-light">Inicio de sesion</h3>
+    <div class="EstiloSection">
+        <div>
+            @if (!string.IsNullOrEmpty(error))
+            {
+                <div class="text-danger">@error</div>
+
+
+
+            }
+
+            <form class="EstiloForm" action="Login?ReturnUrl=@WebUtility.UrlDecode(returnUrl)" method="post">
+                <div>
+                    <label for="exampleInputEmail" class="form-label text-light">Usuario</label>
+                    <input class="form-control" name="Username" type="text" required>
+                </div>
+
+                <div>
+                    <label for="exampleInputEmail" class="form-label text-light">Contraseña</label>
+                    <input type="Password" class="form-control" name="Password" required>
+                </div>
+
+                <button type="submit" class="EstiloButtonpaddin">Iniciar Sesion</button>
+            </form>
+        </div>
+    </div>

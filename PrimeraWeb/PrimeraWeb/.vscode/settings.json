@@ -1,0 +1,12 @@
+{
+    "prettier.documentSelectors": [
+        "preti"
+    ],
+    "prettier.requireConfig": true,
+    "prettier.insertPragma": true,
+    "prettier.requirePragma": true,
+    "prettier.resolveGlobalModules": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+}
